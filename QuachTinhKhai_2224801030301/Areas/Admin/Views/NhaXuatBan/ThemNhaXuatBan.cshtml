@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuachTinhKhai_2224801030301.Models.NHAXUATBAN>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ThemNhaXuatBan</title>
+</head>
+<body>
+    <div>
+        <h2>THÊM NHÀ XUẤT BẢN</h2>
+        <form method="post" name="ThemNhaXuatBan" action="~/Admin/NhaXuatBan/ThemNhaXuatBan">
+            <table>
+                <tr>
+                    <td>Tên nhà xuất bản:</td>
+                    <td>
+                        <input type="text" name="TenNXB" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ nhà xuất bản:</td>
+                    <td>
+                        <input type="text" name="DiaChi" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện thoại nhà xuất bản:</td>
+                    <td>
+                        <input type="text" name="Dienthoai" />
+                    </td>
+                </tr>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Lưu" />
+                        <input type="reset" value="Xóa" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <a href="~/Admin/NhaXuatBan/IndexNXB" />Quay lui</a>
+    </div>
+</body>
+</html>

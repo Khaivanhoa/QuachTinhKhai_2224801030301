@@ -1,0 +1,60 @@
+﻿@model IEnumerable<QuachTinhKhai_2224801030301.Models.NHAXUATBAN>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexNXB</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Thêm mới", "ThemNhaXuatBan")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+               Ma nha xuat ban
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.TenNXB)*@ Tên nhà xuất bản
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi) Địa chỉ
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DienThoai) Điện thoại
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                @Html.ActionLink("Sua", "SuaNXB", new { id=item.MaNXB },"NhaXuatBan") |
+                <a href="~/Admin/NhaXuatBan/ChiTietNXB?id=@item.MaNXB">Xem chi tiet</a>
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
